@@ -1,0 +1,15 @@
+{
+  "name": "instalistr-models",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "author": "Chris Occhipinti",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^3.10.0",
+    "mongoose": "^4.0.7",
+    "mongoose-deep-populate": "^1.1.0",
+    "q": "^1.4.1"
+  }
+}
