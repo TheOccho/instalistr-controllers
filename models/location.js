@@ -3,6 +3,7 @@ var Schema = mongoose.Schema;
 var Location;
 
 var locationSchema = new Schema({
+	shared_with_other_posts: {type: Boolean, default: false},
 	instagram_id: Number,
 	foursquare_id: String,
 	name: String,
