@@ -2,7 +2,7 @@ module.exports = {
   controllers: {
     list: require('./controllers/list'),
     location: require('./controllers/location'),
-    post: require('./controller/post'),
+    post: require('./controllers/post'),
     user: require('./controllers/user')
   },
   models: {
