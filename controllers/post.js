@@ -49,10 +49,10 @@ module.exports.remove = function(_id) {
 				if (err) {
 					return defer.reject(err);
 				}
-				defer.resolve();
+				defer.resolve(post);
 			});
 		} else {
-			defer.resolve();
+			defer.resolve(post);
 		}
 	});
 	return defer.promise;

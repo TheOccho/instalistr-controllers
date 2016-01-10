@@ -30,12 +30,20 @@ module.exports.findByLocationId = function(location_id) {
 	return defer.promise;
 };
 
-module.exports.remove = function(location_id) {
+module.exports.remove = function(_id) {
 	var defer = Q.defer();
-	Location.remove( { instagram_id: location_id } ).exec(function (err) {
+	Location.findOne( { _id: _id } ).exec(function(err, location) {
 		if (err) return defer.reject(err);
-		// removed!
-		defer.resolve('Location id: ' + location_id + ' was successfully removed');
+		if (!location.shared_with_other_posts) {
+			location.remove(function(err) {
+				if (err) {
+					return defer.reject(err);
+				}
+				defer.resolve(location);
+			});
+		} else {
+			defer.resolve(location);
+		}
 	});
 	return defer.promise;
 };
