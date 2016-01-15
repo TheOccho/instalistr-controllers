@@ -12,6 +12,7 @@ var userSchema = new Schema({
   full_name: String,
   profile_picture: String,
   access_token: {type: String, default: null},
+  blacklisted: {type: Boolean, default: false},
   lists: [{ type : Schema.Types.ObjectId, ref: 'list' }]
 });
 
