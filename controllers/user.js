@@ -45,6 +45,11 @@ module.exports.getLists = function(username) {
 		else {
       var lists = [], tmpObj;
       user.lists.forEach(function(list) {
+        // Sort by most recent
+        list.posts.sort(function(a, b) {
+          return new Date(b.post.post_created_time * 1000).getTime() - new Date(a.post.post_created_time * 1000).getTime();
+        });
+        
         tmpObj = {};
         tmpObj.id = list._id;
         tmpObj.name = list.name;
